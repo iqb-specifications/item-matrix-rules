@@ -1,5 +1,5 @@
 {
-  "$id": "index-matrix-rules@0.1",
+  "$id": "item-matrix-rules@0.1",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Item Matrix Rules",
   "description": "Rules for translating variable response status into item values.",
