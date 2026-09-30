@@ -20,7 +20,7 @@
           "default": 0
         },
         "useUnitAliasIfSingleVariable": {
-          "description": "If only one variable exist per unit, the item id will be taken from unit alias w/o suffix.",
+          "description": "If only one variable exists per unit, the item id will be taken from unit alias w/o suffix.",
           "type": "boolean",
           "default": false
         }
