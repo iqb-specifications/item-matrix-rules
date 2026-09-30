@@ -1,21 +1,21 @@
 {
-  "name": "@iqbspecs/testcenter-workspace-config",
+  "name": "@iqbspecs/index-matrix-rules",
   "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
   "license": "CC0-1.0",
-  "description": "Rules for translating variable response status into item missing value.",
+  "description": "Rules for translating variable response status into item values.",
   "scripts": {
-    "validate-schema": "test-schema test missing-map.schema.json",
+    "validate-schema": "test-schema test index-matrix-rules.schema.json",
     "async_generate": "asyncapi generate fromTemplate asyncapi.yaml @asyncapi/html-template --param config=asyncapi.config.json -o ./public --force-write --use-new-generator",
     "generate_docs": "npm run async_generate && cat add.css >> ./public/css/global.min.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iqb-specifications/missing-map.git"
+    "url": "git+https://github.com/iqb-specifications/index-matrix-rules.git"
   },
   "bugs": {
-    "url": "https://github.com/iqb-specifications/missing-map/issues"
+    "url": "https://github.com/iqb-specifications/index-matrix-rules/issues"
   },
-  "homepage": "https://github.com/iqb-specifications/missing-map#readme",
+  "homepage": "https://github.com/iqb-specifications/index-matrix-rules#readme",
   "devDependencies": {
     "@asyncapi/cli": "^4.1.1",
     "@asyncapi/html-template": "^3.1.0",

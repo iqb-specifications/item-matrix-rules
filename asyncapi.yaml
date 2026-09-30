@@ -1,9 +1,9 @@
 asyncapi: 3.0.0
-id: "urn:iqb-specifications:missing-map"
+id: "urn:iqb-specifications:index-matrix-rules"
 defaultContentType: application/json
 info:
   title: "Missing map"
-  description: "Rules for translating variable response status into item missing value."
+  description: "Rules for translating variable response status into item values."
   license:
     name: CC0 1.0
     url: https://creativecommons.org/publicdomain/zero/1.0/
@@ -17,8 +17,8 @@ channels:
     messages:
       select_schema:
         payload:
-          $ref: "#/components/schemas/missing-map"
+          $ref: "#/components/schemas/index-matrix-rules"
 components:
   schemas:
     missing-map:
-      $ref: "missing-map.schema.json"
+      $ref: "index-matrix-rules.schema.json"

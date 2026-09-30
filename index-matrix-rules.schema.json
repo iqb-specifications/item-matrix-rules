@@ -1,0 +1,81 @@
+{
+  "$id": "index-matrix-rules@0.1",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Item Matrix Rules",
+  "description": "Rules for translating variable response status into item values.",
+  "type": "object",
+  "properties": {
+    "itemNaming": {
+      "type": "object",
+      "description": "Rules to deviate the id of the item from unit id/alias and variable id",
+      "properties": {
+        "separator": {
+          "description": "Character between unit id/alias and variable id",
+          "type": "string",
+          "default": ""
+        },
+        "omitUnitAliasIfVariableIdLongerThan": {
+          "description": "Item id will be taken from variable id w/o prefix. '0' = always prefix",
+          "type": "integer",
+          "default": 0
+        },
+        "useUnitAliasIfSingleVariable": {
+          "description": "If only one variable exist per unit, the item id will be taken from unit alias w/o suffix.",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "missingsMap": {
+      "description": "Rules how to translate response status into item value if not CODING_COMPLETE",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "onResponseStatus": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "UNSET",
+                "NOT_REACHED",
+                "DISPLAYED",
+                "INVALID",
+                "CODING_ERROR"
+              ]
+            },
+            "minItems": 1
+          },
+          "itemValue": {
+            "$ref": "#/$defs/itemValueType"
+          }
+        },
+        "required": [
+          "itemValue",
+          "onResponseStatus"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "missingElse": {
+      "$ref": "#/$defs/itemValueType"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "itemValueType": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "default": 0
+        },
+        "score": {
+          "type": "integer",
+          "default": -99
+        }
+      }
+    }
+  }
+}
