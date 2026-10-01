@@ -1,5 +1,5 @@
 {
-  "$id": "item-matrix-rules@0.1",
+  "$id": "item-matrix-rules@0.2",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Item Matrix Rules",
   "description": "Rules for translating variable response status into item values.",
@@ -47,35 +47,21 @@
             },
             "minItems": 1
           },
-          "itemValue": {
-            "$ref": "#/$defs/itemValueType"
+          "itemScore": {
+            "type": "integer",
+            "default": -99
           }
         },
         "required": [
-          "itemValue",
           "onResponseStatus"
         ],
         "additionalProperties": false
       }
     },
-    "missingElse": {
-      "$ref": "#/$defs/itemValueType"
+    "missingElseItemScore": {
+      "type": "integer",
+      "default": -99
     }
   },
-  "additionalProperties": false,
-  "$defs": {
-    "itemValueType": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "default": 0
-        },
-        "score": {
-          "type": "integer",
-          "default": -99
-        }
-      }
-    }
-  }
+  "additionalProperties": false
 }
